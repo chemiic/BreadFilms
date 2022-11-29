@@ -1,0 +1,29 @@
+.main{
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 50px 0;
+}
+.filter__bar{
+  padding: 10px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.filter__text{
+  font-size: 24px;
+  text-align: center;
+  background: rgb(52,52,52);
+  background: linear-gradient(90deg, rgba(52,52,52,1) 0%, rgba(196,196,196,1) 63%, rgba(255,255,255,1) 100%);
+  padding: 10px;
+}
+.films{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  gap: 20px;
+
+}

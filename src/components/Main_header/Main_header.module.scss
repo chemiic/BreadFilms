@@ -1,0 +1,28 @@
+.header{
+    border-bottom: 2px solid white;
+    display: flex;
+    padding: 10px 40px;
+    justify-content: space-between;
+    align-items: center;
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
+  &__logoText{
+    font-size: 2rem;
+    &:hover{
+      cursor:pointer;
+    }
+  }
+}
+.nav{
+  &List{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    &__itemLink{
+      text-decoration: none;
+      color: #e6e6e6;
+    }
+  }
+}

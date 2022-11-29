@@ -1,0 +1,13 @@
+.reset{
+  background-color: #252525;
+  color: white;
+  border-radius: 10px;
+  padding: 7px;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  border: 2px solid #c4c4c4;
+  &:hover{
+    cursor:pointer;
+    border: 2px solid white;
+  }
+}

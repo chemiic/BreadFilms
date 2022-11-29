@@ -1,0 +1,12 @@
+.footer{
+  display: flex;
+  padding: 20px 40px;
+  border-top: 2px solid white;
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
+  &__text{
+    text-decoration: none;
+    color: white;
+  }
+}

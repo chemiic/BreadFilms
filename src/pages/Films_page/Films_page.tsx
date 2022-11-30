@@ -1,22 +1,16 @@
-import Main_header from "../components/Main_header/Main_header";
-import Main_footer from "../components/Main_footer/Main_footer";
-// import Films from "../components/Films/Films";
-// import FilterBar from "../components/FilterBar/FilterBar";
-import  './Home_page.scss'
-import FilmCard from "../components/FIlmCard/FilmCard";
+import  './Films_page.scss'
+import FilmCard from "../../components/FIlmCard/FilmCard";
 import React, {useEffect, useState} from "react";
-import {IFilmItem} from "../assets/types/types";
-import {FilmData} from "../assets/store/storeFilm";
-import Search from "../components/filters/Search/Search";
-import SortSelect from "../components/filters/SortSelect/SortSelect";
-import GenreSelect from "../components/filters/GenreSelect/GenreSelect";
-import AgeRageSelect from "../components/filters/AgeRate/AgeRate";
-import ResetBtn from "../components/filters/ResetBtn/ResetBtn";
-// import YearSelect from "../components/filters/YearSelect/YearSelect";
+import {IFilmItem} from "../../assets/types/types";
+import {FilmData} from "../../assets/store/storeFilm";
+import Search from "../../components/filters/Search/Search";
+import SortSelect from "../../components/filters/SortSelect/SortSelect";
+import GenreSelect from "../../components/filters/GenreSelect/GenreSelect";
+import AgeRageSelect from "../../components/filters/AgeRate/AgeRate";
+import ResetBtn from "../../components/filters/ResetBtn/ResetBtn";
 import Slider from '@material-ui/core/Slider';
-import './../components/filters/YearSelect/YearSelect.scss'
-export default function Home_page() {
 
+export default function Films_page() {
     const [FilmList, setFilmList] = useState<IFilmItem[]>([]);
     const [search, setSearch] = useState<string>('');
     const [ageRate, setAgeRate] = useState<string>('');
@@ -28,8 +22,8 @@ export default function Home_page() {
 
     const handleChange = (event: Event, newValue: number | number[]) => {
         setYear(newValue as number[]);
+        console.log()
     };
-
 
     const marks = [
         {
@@ -78,14 +72,12 @@ export default function Home_page() {
     };
 
     return (
-        <div className={'layout'}>
-            <Main_header />
             <main className="main">
-
                 <aside className={'filter__bar'}>
                     <p className="filter__text">Фильтр</p>
                     <Search search={search} setSearch={setSearch} />
                     {/*<YearSelect />*/}
+
                     <div className="price-range-slider" >
                         <Slider
                             getAriaLabel={() => 'Temperature range'}
@@ -97,8 +89,8 @@ export default function Home_page() {
                             onChange={handleChange}
                             valueLabelDisplay="on"
                         />
-
                     </div>
+
                     <SortSelect rate={rate} setRate={setRate} />
                     <GenreSelect genre={genre} setGenre={setGenre}/>
                     <AgeRageSelect ageRate={ageRate} setAgeRate={setAgeRate} />
@@ -106,14 +98,11 @@ export default function Home_page() {
                 </aside>
 
 
-                {/*<FilterBar />*/}
                 <div className={'films'}>
                     {FilmList.map((item) => (
                     <FilmCard item={item} key={item.id} />
                     ))}
                 </div>
             </main>
-            <Main_footer />
-        </div>
     )
 }

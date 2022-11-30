@@ -22,8 +22,32 @@
 }
 .films{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4,1fr);
   justify-items: center;
   gap: 20px;
 
+}
+.price-range-slider{
+  margin-top: 25px;
+}
+.MuiSlider-root {
+  color: #c4c4c4 !important;
+  .PrivateValueLabel-label-10 {
+    color: black;
+    padding: 4px;
+  }
+  .MuiSlider-markLabel {
+    color: #c4c4c4;
+  }
+  .MuiSlider-markActive{
+    background-color: white;
+  }
+  & .MuiSlider-thumb{
+    &:focus, &:hover, &.Mui-active, &.Mui-focusVisible {
+      box-shadow: none;
+    }
+    &:before {
+      display: none;
+    }
+  }
 }

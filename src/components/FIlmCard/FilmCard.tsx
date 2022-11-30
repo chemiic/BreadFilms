@@ -1,6 +1,7 @@
 import React, {FC} from "react";
 import {IFilmItem} from "../../assets/types/types";
 import styles from './FilmCard.module.scss';
+import {Link} from "react-router-dom";
 
 // import { Link } from 'react-router-dom';
 interface Props {
@@ -9,10 +10,11 @@ interface Props {
 
 const FilmCard: FC<Props> = ({ item }) =>  {
     return (
+
         <>
             <div className={styles.card}>
                 <div className={styles.img__wrap}>
-                    {/*<Link to={`/animelist/${item.id}`}>*/}
+                    <Link to={`/Katalog/${item.id}`}>
                         <img className={styles.card__img} src={item.img} alt={item.title} />
                         <div className={styles.poster}>
                             <svg
@@ -30,7 +32,7 @@ const FilmCard: FC<Props> = ({ item }) =>  {
                             </svg>
                             <span className={styles.rating}>{item.rate.toFixed(1)}</span>
                         </div>
-                    {/*</Link>*/}
+                    </Link>
                 </div>
                 <div className={styles.card__desc}>
                     <h2 className={styles.card__title}>{item.title}</h2>

@@ -12,7 +12,7 @@ interface Props {
 const GenreSelect: FC<Props> = ({ genre, setGenre }) => {
   return (
     <div className={styles.genre__select}>
-        <p className={'genre__selectText'}>Жанр</p>
+      <p className={'genre__selectText'}>Жанр</p>
       <select
         name="film"
         id="film-select"

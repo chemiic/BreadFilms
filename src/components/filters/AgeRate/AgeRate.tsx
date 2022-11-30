@@ -17,8 +17,8 @@ const AgeRageSelect: FC<Props> = ({ ageRate, setAgeRate }) => {
         onChange={(event) => {
           setAgeRate(event.target.value);
         }}
-      >
-        <option value=" "></option>
+        >
+        <option value=""></option>
         <option value="0+">0+</option>
         <option value="14+">14+</option>
         <option value="16+">16+</option>

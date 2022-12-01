@@ -1,5 +1,5 @@
 export interface IFilmItem {
-    id: number;
+    id?: number;
     title: string;
     description: string;
     genre: string[];
@@ -7,4 +7,5 @@ export interface IFilmItem {
     age: string;
     year: number;
     img: string;
+    linkVideo: string;
 }

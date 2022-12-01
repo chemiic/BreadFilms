@@ -9,7 +9,7 @@ const ResetBtn: FC<Props> = ({ reset }) => {
 
   return (
       <button className={styles.reset} onClick={reset}>
-        Reset
+        Сброс
       </button>
   );
 };

@@ -32,3 +32,19 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+
+.about{
+  padding: 100px 10px;
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+
+  gap: 20px;
+  &__title{
+    font-size: 2rem;
+    text-align: center;
+  }
+  &__text{
+    color: #c4c4c4;
+  }
+}

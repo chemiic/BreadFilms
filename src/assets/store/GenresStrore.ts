@@ -15,5 +15,26 @@ export const GenresStore: IGenreStore[] = [
         id:2,
         value: 'Romance',
     },
+    {
+        id:3,
+        value: 'Detective',
+    },
+    {
+        id:4,
+        value: 'Comedy',
+    },
+    {
+        id:5,
+        value: 'Fantasy',
+    },
+    {
+        id:6,
+        value: 'Psychological',
+    },
+    {
+        id:7,
+        value: 'Slice of life',
+    },
+
 
 ]

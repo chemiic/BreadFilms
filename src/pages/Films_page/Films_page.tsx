@@ -9,6 +9,8 @@ import GenreSelect from "../../components/filters/GenreSelect/GenreSelect";
 import AgeRageSelect from "../../components/filters/AgeRate/AgeRate";
 import ResetBtn from "../../components/filters/ResetBtn/ResetBtn";
 import Slider from '@material-ui/core/Slider';
+import MyModal from "../../components/MyModal/MyModal";
+
 
 export default function Films_page() {
     const [FilmList, setFilmList] = useState<IFilmItem[]>([]);
@@ -16,7 +18,7 @@ export default function Films_page() {
     const [ageRate, setAgeRate] = useState<string>('');
     const [genre, setGenre] = useState<string>('');
     const [rate, setRate] = useState<string>('');
-
+    const [modal, setModal] = useState<boolean>(false)
 
     const [year, setYear] = useState<number[]>([2000,2022]);
 
@@ -24,6 +26,8 @@ export default function Films_page() {
         setYear(newValue as number[]);
         console.log()
     };
+
+
 
     const marks = [
         {
@@ -71,6 +75,31 @@ export default function Films_page() {
         setYear([2000,2022])
     };
 
+
+    const [title,setTitle] = useState('');
+    const [description,setDescription] = useState('')
+    const [age, setAge] = useState('')
+
+
+
+    const addNewFilm = () => {
+        event?.preventDefault()
+        const newFilm: IFilmItem = {
+            id: Date.now(),
+            title,
+            description,
+            genre: [],
+            rate: 10,
+            age,
+            year: 20022,
+            img: 'https://media.tenor.com/9ckqI2zyVTkAAAAM/trollge-troll.gif',
+            linkVideo: '',
+        }
+        setFilmList([...FilmData, newFilm])
+        setModal(false)
+        alert('Фильм успешно добавлен!')
+    }
+
     return (
             <main className="main">
                 <aside className={'filter__bar'}>
@@ -95,13 +124,43 @@ export default function Films_page() {
                     <GenreSelect genre={genre} setGenre={setGenre}/>
                     <AgeRageSelect ageRate={ageRate} setAgeRate={setAgeRate} />
                     <ResetBtn reset={ResetFilter} />
+                    <button className={'addBtn'} onClick={()=> setModal(true) }>Добавить фильм</button>
+                    <MyModal visible={modal} setVisible={setModal}>
+                        <form className={'form'}>
+                            <p className={'form__title'}>Добавить фильм</p>
+                            <input type="text"
+                                   className={'form__input'}
+                                   placeholder={'Назавние'}
+                                   value={title}
+                                   onChange={event => setTitle(event.target.value)}
+                            />
+                            <input type="text"
+                                   className={'form__input'}
+                                   placeholder={'Описание'}
+                                   value={description}
+                                   onChange={event => setDescription(event.target.value)}
+                            />
+
+                            <input type="text"
+                                   className={'form__input'}
+                                   placeholder={'Год выпуска'}
+                                   value={age}
+                                   onChange={event => setAge(event.target.value)}
+                            />
+
+                            <button className={'form__btn'} onClick={addNewFilm}>Добавить</button>
+                        </form>
+                    </MyModal>
                 </aside>
 
 
                 <div className={'films'}>
-                    {FilmList.map((item) => (
-                    <FilmCard item={item} key={item.id} />
-                    ))}
+                    {FilmList.length !== 0
+                        ?
+                        FilmList.map((item) => <FilmCard item={item} key={item.id} />)
+                        :
+                        <p className={'noCases'}>Ничего не найдено</p>
+                    }
                 </div>
             </main>
     )

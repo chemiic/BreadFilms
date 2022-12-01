@@ -22,7 +22,7 @@ const Film_page: FC = () => {
     return(
         <>
             {item && (
-            <main className="main">
+            <main className='main'>
                 <div className={styles.main__content}>
                     <div className={styles.img__wrap}>
                         <img src={item.img} alt="" className={styles.main__img}/>
@@ -46,12 +46,18 @@ const Film_page: FC = () => {
                         </div>
                         <h2 className={styles.desc__title}>{item.title}</h2>
                         <p className={styles.desc__year}>Год выпуска:  <span>{item.year}</span></p>
-                        <p className={styles.desc__genre}>Жанр:  <span>{item.genre}</span></p>
+                        <p className={styles.desc__genre}>Жанр:  <span>{item.genre.join(', ').slice(1)}</span></p>
                         <p className={styles.desc__age}>Возрастной ценз:  <span>{item.age}</span></p>
                         <p className={styles.desc__text}>Описание: <span>{item.description}</span></p>
                     </div>
                 </div>
-
+                <div className={styles.trailerBlock}>
+                    <p className={styles.trailerBlock__title}>Трейлер</p>
+                    <iframe width="500" height="315" src={item.linkVideo}
+                            title="YouTube video player" frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen></iframe>
+                </div>
             </main>
         )}
         </>

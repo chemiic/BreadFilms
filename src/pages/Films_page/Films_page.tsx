@@ -1,6 +1,6 @@
 import  './Films_page.scss'
 import FilmCard from "../../components/FIlmCard/FilmCard";
-import React, {useEffect, useState} from "react";
+import React, {FC, useEffect, useState} from "react";
 import {IFilmItem} from "../../assets/types/types";
 import {FilmData} from "../../assets/store/storeFilm";
 import Search from "../../components/filters/Search/Search";
@@ -11,8 +11,7 @@ import ResetBtn from "../../components/filters/ResetBtn/ResetBtn";
 import Slider from '@material-ui/core/Slider';
 import MyModal from "../../components/MyModal/MyModal";
 
-
-export default function Films_page() {
+const Films_page: FC = () => {
     const [FilmList, setFilmList] = useState<IFilmItem[]>([]);
     const [search, setSearch] = useState<string>('');
     const [ageRate, setAgeRate] = useState<string>('');
@@ -100,6 +99,8 @@ export default function Films_page() {
         alert('Фильм успешно добавлен!')
     }
 
+
+// @ts-ignore:
     return (
             <main className="main">
                 <aside className={'filter__bar'}>
@@ -165,3 +166,4 @@ export default function Films_page() {
             </main>
     )
 }
+export default Films_page

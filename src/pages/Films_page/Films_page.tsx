@@ -20,10 +20,6 @@ const Films_page: FC = () => {
 
     const [year, setYear] = useState<number[]>([2000,2022]);
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 1a750d02e4709b29c920598b17f6ff09d0dd4de5
     useEffect(() => {
         const result = FilmData.filter((item) => {
             return (
@@ -83,12 +79,6 @@ const Films_page: FC = () => {
                 <aside className={'filter__bar'}>
                     <p className="filter__text">Фильтр</p>
                     <Search search={search} setSearch={setSearch} />
-<<<<<<< HEAD
-
-
-=======
-      
->>>>>>> 1a750d02e4709b29c920598b17f6ff09d0dd4de5
 
                     <SortSelect rate={rate} setRate={setRate} />
                     <GenreSelect genre={genre} setGenre={setGenre}/>
@@ -135,7 +125,6 @@ const Films_page: FC = () => {
             </main>
     )
 }
-<<<<<<< HEAD
+
 export default Films_page
-=======
->>>>>>> 1a750d02e4709b29c920598b17f6ff09d0dd4de5
+

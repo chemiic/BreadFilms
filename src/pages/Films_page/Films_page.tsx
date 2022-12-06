@@ -8,7 +8,6 @@ import SortSelect from "../../components/filters/SortSelect/SortSelect";
 import GenreSelect from "../../components/filters/GenreSelect/GenreSelect";
 import AgeRageSelect from "../../components/filters/AgeRate/AgeRate";
 import ResetBtn from "../../components/filters/ResetBtn/ResetBtn";
-import Slider from '@material-ui/core/Slider';
 import MyModal from "../../components/MyModal/MyModal";
 
 
@@ -22,31 +21,6 @@ export default function Films_page() {
 
     const [year, setYear] = useState<number[]>([2000,2022]);
 
-    const handleChange = (event: Event, newValue: number | number[]) => {
-        setYear(newValue as number[]);
-        console.log()
-    };
-
-
-
-    const marks = [
-        {
-            value: 2000,
-            label: '2000',
-        },
-        {
-            value: 2007,
-            label: '2007',
-        },
-        {
-            value: 2016,
-            label: '2010',
-        },
-        {
-            value: 2022,
-            label: '2022',
-        },
-    ];
 
     useEffect(() => {
         const result = FilmData.filter((item) => {

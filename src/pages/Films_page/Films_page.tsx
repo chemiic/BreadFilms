@@ -105,20 +105,7 @@ export default function Films_page() {
                 <aside className={'filter__bar'}>
                     <p className="filter__text">Фильтр</p>
                     <Search search={search} setSearch={setSearch} />
-                    {/*<YearSelect />*/}
-
-                    <div className="price-range-slider" >
-                        <Slider
-                            getAriaLabel={() => 'Temperature range'}
-                            value={year}
-                            min={2000}
-                            max={2022}
-                            color='secondary'
-                            marks={marks}
-                            onChange={handleChange}
-                            valueLabelDisplay="on"
-                        />
-                    </div>
+      
 
                     <SortSelect rate={rate} setRate={setRate} />
                     <GenreSelect genre={genre} setGenre={setGenre}/>

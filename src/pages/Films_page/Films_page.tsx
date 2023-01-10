@@ -19,6 +19,7 @@ export default function Films_page() {
     const [rate, setRate] = useState<string>('');
     const [modal, setModal] = useState<boolean>(false)
 
+<<<<<<< HEAD
 
     const marks = [
         {
@@ -38,6 +39,9 @@ export default function Films_page() {
             label: '2022',
         },
     ];
+=======
+    const [year, setYear] = useState<number[]>([2000,2022]);
+>>>>>>> fabbbfd91fe04976ca38a494ab3ec3cc816f6f78
 
     useEffect(() => {
         const result = FilmData.filter((item) => {
@@ -75,7 +79,11 @@ export default function Films_page() {
                 <aside className={'filter__bar'}>
                     <p className="filter__text">Фильтр</p>
                     <Search search={search} setSearch={setSearch} />
+<<<<<<< HEAD
                     {/*<YearSelect />*/}
+=======
+
+>>>>>>> fabbbfd91fe04976ca38a494ab3ec3cc816f6f78
                     <SortSelect rate={rate} setRate={setRate} />
                     <GenreSelect genre={genre} setGenre={setGenre}/>
                     <AgeRageSelect ageRate={ageRate} setAgeRate={setAgeRate} />
@@ -118,4 +126,11 @@ export default function Films_page() {
                 </div>
             </main>
     )
+<<<<<<< HEAD
 }
+=======
+}
+
+export default Films_page
+
+>>>>>>> fabbbfd91fe04976ca38a494ab3ec3cc816f6f78
